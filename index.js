@@ -65,4 +65,4 @@ client.on("messageCreate", message => {
 client.login(process.env.TOKEN);
 
 //artezzy
-//client.login('');
+//client.login(process.);
