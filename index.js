@@ -15,17 +15,21 @@ let monkey = 3;
 //dangero
 client.on("messageCreate", message => {
   if (message.author.id == map.dangeroId && message.channelId == map.gienaChannelId 
-    && message.content.startsWith(map.mentionStart + map.gienaRole) && message.content.includes('+') && monkey > 0){
-      client.channels.cache.get(map.gienaChannelId).send('+');
-      monkey--;
+    && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
+      if (message.content.includes('+') || message.content.includes('1') ){
+        client.channels.cache.get(map.gienaChannelId).send('+');
+        monkey--;
+      }
 }});
 
 //stick
 client.on("messageCreate", message => {
   if (message.author.id == map.stickId && message.channelId == map.gienaChannelId 
-    && message.content.startsWith(map.mentionStart + map.gienaRole) && message.content.includes('+') && monkey > 0){
-      client.channels.cache.get(map.gienaChannelId).send('+');
-      monkey--;
+    && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
+      if (message.content.includes('+') || message.content.includes('1') ){
+        client.channels.cache.get(map.gienaChannelId).send('+');
+        monkey--;
+      }
 }});
 
 client.login(process.env.TOKEN);
