@@ -4,6 +4,7 @@ const map = {
     stickId: "322895366221463573",
     gienaChannelId: "1236328199298748416",
     defaultChannel: "1249406942254727190",
+    startChannel: "1279701306533089401",
     gienaRole: "1236305228794433648"
 }
 
