@@ -15,23 +15,13 @@ let monkey = 3;
 //begin searching at position 21, skip mention id <@...>(22 chars total)
 let searchPosition = 21;
 
-//dangero
 client.on("messageCreate", message => {
-  if (message.author.id == map.dangeroId && message.channelId == map.gienaChannelId 
-    && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
-      if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition) ){
-        client.channels.cache.get(map.gienaChannelId).send('+');
-        monkey--;
-      }
-}});
-
-//stick
-client.on("messageCreate", message => {
-  if (message.author.id == map.stickId && message.channelId == map.gienaChannelId 
-    && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
-      if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition) ){
-        client.channels.cache.get(map.gienaChannelId).send('+');
-        monkey--;
+  if (message.author.id == map.michelleId || message.author.id == map.dangeroId || message.author.id == map.stickId){
+      if (message.channelId == map.gienaChannelId && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
+          if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition)){
+            client.channels.cache.get(map.gienaChannelId).send('+');
+            monkey--;
+          }
       }
 }});
 
