@@ -2,6 +2,7 @@ const map = {
     mentionStart: "<@&", 
     dangeroId: "335105483662819328",
     stickId: "322895366221463573",
+    itachisanId: "563129498359431198",
     michelleId: "308496497559994369",
     gienaChannelId: "1236328199298748416",
     defaultChannel: "1249406942254727190",

@@ -10,16 +10,18 @@ client.on('ready', async () => {
 });
 
 //anti-monkey variable
-let monkey = 3;
+let monkey = 2;
 
 //begin searching at position 21, skip mention id <@...>(22 chars total)
 let searchPosition = 21;
 
 client.on("messageCreate", message => {
-  if (message.author.id == map.michelleId || message.author.id == map.dangeroId || message.author.id == map.stickId){
+  if (message.author.id == map.michelleId || message.author.id == map.dangeroId || message.author.id == map.stickId || message.itachisanId){
       if (message.channelId == map.gienaChannelId && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
           if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition)){
-            client.channels.cache.get(map.gienaChannelId).send('+');
+            setTimeout(function(){
+              client.channels.cache.get(map.gienaChannelId).send('+')
+              },1000 * 0.33);
             monkey--;
           }
       }
