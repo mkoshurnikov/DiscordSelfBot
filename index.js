@@ -16,10 +16,10 @@ let monkey = 2;
 let searchPosition = 21;
 
 client.on("messageCreate", message => {
-  if (message.author.id == map.michelleId || message.author.id == map.dangeroId || message.author.id == map.stickId || message.itachisanId){
+  if (map.usersId.includes(message.author.id)){
       if (message.channelId == map.gienaChannelId && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
           if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition)){
-            setTimeout(function(){
+            setTimeout(()=> {
               client.channels.cache.get(map.gienaChannelId).send('+')
               },1000 * 0.33);
             monkey--;
