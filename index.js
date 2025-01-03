@@ -9,7 +9,7 @@ client.on('ready', async () => {
   client.channels.cache.get(map.startChannel).send('Start...');
 });
 
-//anti-spam variableъъъъ
+//anti-spam variable
 let monkey = 2;
 
 //begin searching at position 21, skip mention id <@...>(22 chars total)
