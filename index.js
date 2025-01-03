@@ -9,7 +9,7 @@ client.on('ready', async () => {
   client.channels.cache.get(map.startChannel).send('Start...');
 });
 
-//anti-spam variable
+//anti-spam variableъъъъ
 let monkey = 2;
 
 //begin searching at position 21, skip mention id <@...>(22 chars total)
@@ -17,11 +17,11 @@ let searchPosition = 21;
 
 client.on("messageCreate", message => {
   if (map.usersId.includes(message.author.id)){
-      if (message.channelId == map.gienaChannelId && message.content.startsWith(map.mentionStart + map.gienaRole) && monkey > 0){
+      if (message.channelId == map.newGienaChannelId && message.content.startsWith(map.mentionStart + map.newGienaRole) && monkey > 0){
           if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition)){
             setTimeout(()=> {
               client.channels.cache.get(map.gienaChannelId).send('+')
-              },1000 * 0.33); //delay in ms
+              },1000 * 0.44); //delay in ms
             monkey--;
           }
       }
