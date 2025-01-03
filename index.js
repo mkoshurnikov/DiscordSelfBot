@@ -20,7 +20,7 @@ client.on("messageCreate", message => {
       if (message.channelId == map.newGienaChannelId && message.content.startsWith(map.mentionStart + map.newGienaRole) && monkey > 0){
           if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition)){
             setTimeout(()=> {
-              client.channels.cache.get(map.gienaChannelId).send('+')
+              client.channels.cache.get(map.newGienaChannelId).send('+')
               },1000 * 0.44); //delay in ms
             monkey--;
           }
