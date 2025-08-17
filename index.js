@@ -17,11 +17,11 @@ let searchPosition = 21;
 
 client.on("messageCreate", message => {
   if (map.usersId.includes(message.author.id)){
-      if (message.channelId == map.newGienaChannelId && message.content.startsWith(map.mentionStart + map.newGienaRole) && monkey > 0){
-          if (message.content.includes('+', searchPosition) || message.content.includes('1', searchPosition)){
+      if (message.channelId == map.bratosikChannelId && message.content.startsWith(map.mentionStart + map.raidRole) && monkey > 0){
+          if (message.content.includes('1', searchPosition) || message.content.includes('2', searchPosition)){
             setTimeout(()=> {
-              client.channels.cache.get(map.newGienaChannelId).send('+')
-              },1000 * 0.44); //delay in ms
+              message.react('✅')
+              },1000 * 20); //delay 20sec
             monkey--;
           }
       }
