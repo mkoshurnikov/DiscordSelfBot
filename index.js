@@ -21,7 +21,7 @@ client.on("messageCreate", message => {
           if (message.content.includes('1', searchPosition) || message.content.includes('2', searchPosition)){
             setTimeout(()=> {
               message.react('✅')
-              },1000 * 20); //delay 20sec
+              },1000 * 10); //delay, sec
             monkey--;
           }
       }
