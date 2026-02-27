@@ -4,27 +4,25 @@ const map = require('./variables');
 const { Client } = require('discord.js-selfbot-v13');
 const client = new Client({checkUpdate: false});
 
-client.on('ready', async () => {
+client.on('ready', () => {
   console.log('Discord PLUS is ready!');
-  client.channels.cache.get(map.startChannel).send('Start...');
+
+  client.channels.cache
+    .get(map.startChannel)
+    ?.send('Start...');
+
+  let button1Id = 'raid_melee';
+  
+  // click 1st button
+  client.channels.fetch('1354880760917528787')
+    .then(channel => channel.messages.fetch('1476926871705878625'))
+    .then(message => {
+      setTimeout(()=> {
+        return message.clickButton('raid_melee');
+      },1000 * 2); //delay, sec
+    })
+    .then(() => console.log('Clicked melee'))
+    .catch(console.error);
 });
 
-//anti-spam variable
-let monkey = 2;
-
-//begin searching at position 21, skip mention id <@...>(22 chars total)
-let searchPosition = 21;
-
-client.on("messageCreate", message => {
-  if (map.usersId.includes(message.author.id)){
-      if (message.channelId == map.bratosikChannelId && message.content.startsWith(map.mentionStart + map.raidRole) && monkey > 0){
-          if (message.content.includes('1', searchPosition) || message.content.includes('2', searchPosition)){
-            setTimeout(()=> {
-              message.react('✅')
-              },1000 * 3); //delay, sec
-            monkey--;
-          }
-      }
-}});
-
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);  
