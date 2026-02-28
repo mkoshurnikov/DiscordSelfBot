@@ -37,16 +37,16 @@ client.on('ready', () => {
       },1000 * 2); //delay, sec
   });
 
-//   // click 1st button
-//     client.channels.fetch('1354880760917528787')
-//       .then(channel => channel.messages.fetch('1476926871705878625'))
-//       .then(message => {
-//         setTimeout(()=> {
-//           return message.clickButton(map.meleeButtonId);
-//         },1000 * 2); //delay, sec
-//       })
-//       .then(() => console.log('Clicked melee'))
-//       .catch(console.error);
-// });
+  // // click 1st button
+  //   client.channels.fetch('1354880760917528787')
+  //     .then(channel => channel.messages.fetch('1476926871705878625'))
+  //     .then(message => {
+  //       setTimeout(()=> {
+  //         return message.clickButton(map.meleeButtonId);
+  //       },1000 * 2); //delay, sec
+  //     })
+  //     .then(() => console.log('Clicked melee'))
+  //     .catch(console.error);
+});
 
 client.login(process.env.TOKEN);
