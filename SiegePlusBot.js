@@ -3,7 +3,7 @@ const map = require('./variables');
 function siegePlus(client) {
   console.log('SiegeBot started...');
 
-  let antiSpam = 2;
+  let antiSpam = 0;
 
   //bot v1 and people reaction
   client.on("messageCreate", message => {
@@ -30,7 +30,7 @@ function siegePlus(client) {
       message.clickButton(map.meleeButtonId)
         .then(() => console.log("Clicked"))
         .catch(console.error);
-    }, 1000 * 2); //delay, sec
+    }, 1000 * 1); //delay, sec
   });
 }
 
